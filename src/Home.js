@@ -5,14 +5,14 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleCrawlButtonClick = async () => {
+    navigate('/crawl');
     try {
       const response = await fetch('http://localhost:5000/api/crawl', { method: 'POST' });
-      if (response.ok) {
-        navigate('/crawl');
-      } else {
-        console.error('Error calling the API:', response.statusText);
+      if (!response.ok) {
+        navigate('/error');
       }
     } catch (error) {
+      navigate('/error');
       console.error('Error calling the API:', error);
     }
   };
@@ -22,15 +22,17 @@ const Home = () => {
   };
 
   const handleComputeButtonClick = async () => {
+    navigate('/compute-pagerank');
     try {
       const response = await fetch('http://localhost:5000/api/compute-pagerank', { method: 'POST' });
-      if (response.ok) {
+      if (!response.ok) {
+        navigate('/error');
+      } else {
         const result = await response.json();
         navigate('/compute-pagerank', { state: result });
-      } else {
-        console.error('Error calling the API:', response.statusText);
       }
     } catch (error) {
+      navigate('/error');
       console.error('Error calling the API:', error);
     }
   };
