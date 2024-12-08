@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 const ChangeWeights = () => {
   const [weights, setWeights] = useState({
-    comment: 1.2,
-    follow: 1.0,
-    mention: 0.8,
-    post: 3.0,
-    retweet: 1.5
+    comment: 0.0,
+    follow: 0.0,
+    mention: 0.0,
+    post: 0.0,
+    retweet: 0.0
   });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
