@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import TopKols from './TopKols';
 import Crawl from './Crawl';
+import ComputePageRank from './ComputePageRank';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/top-kols" element={<TopKols />} />
         <Route path="/crawl" element={<Crawl />} />
+        <Route path="/compute-pagerank" element={<ComputePageRank />} />
         {/*<Route path="/" element={<div>Welcome! Please navigate to /home</div>} /> */}
       </Routes>
     </Router>
