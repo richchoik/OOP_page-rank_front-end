@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Crawl.css';
+import '../style/Crawl.css';
 
 const Crawl = () => {
   const location = useLocation();

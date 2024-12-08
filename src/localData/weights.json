@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "weights": {
+        "comment": 1.2,
+        "follow": 1.0,
+        "mention": 0.8,
+        "post": 2.0,
+        "retweet": 1.5
+    }
+}

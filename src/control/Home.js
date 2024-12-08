@@ -42,12 +42,17 @@ const Home = () => {
       });
   };
 
+  const handleWeightsButtonClick = () => { 
+    navigate('/weights'); 
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <button className="btn" onClick={handleCrawlButtonClick}>Crawl data</button>
         <button className="btn" onClick={handleTopKolsButtonClick}>Top 10 KOLs</button>
         <button className="btn" onClick={handleComputeButtonClick}>Compute Pagerank</button>
+        <button className="btn" onClick={handleWeightsButtonClick}>Weights</button>
       </header>
     </div>
   );

@@ -1,0 +1,127 @@
+{
+    "cached": true,
+    "computed_at": "2024-12-08T19:14:35.487801",
+    "data": [
+        {
+            "followers": 2800000,
+            "following": 109,
+            "joined_at": "2022-08-01T00:00:00",
+            "pagerank_score": 0.007581843287823077,
+            "posts_cnt": 6994,
+            "role": "KOL",
+            "saved_at": "2024-12-07T00:03:58",
+            "updated_at": "2024-12-07T00:03:58",
+            "user_id": "@ice_blockchain",
+            "username": "Ice Open Network"
+        },
+        {
+            "followers": 2378,
+            "following": 812,
+            "joined_at": "2016-02-01T00:00:00",
+            "pagerank_score": 0.006265090002263858,
+            "posts_cnt": 731,
+            "role": "KOL",
+            "saved_at": "2024-12-06T23:01:46",
+            "updated_at": "2024-12-06T23:01:46",
+            "user_id": "@blockchain__m",
+            "username": "Blockchain"
+        },
+        {
+            "followers": 1300000,
+            "following": 46,
+            "joined_at": "2010-03-01T00:00:00",
+            "pagerank_score": 0.006208657718597034,
+            "posts_cnt": 15700,
+            "role": "KOL",
+            "saved_at": "2024-12-06T22:38:27",
+            "updated_at": "2024-12-06T22:38:27",
+            "user_id": "@blockchain",
+            "username": "Blockchain.com"
+        },
+        {
+            "followers": 8592,
+            "following": 691,
+            "joined_at": "2020-07-01T00:00:00",
+            "pagerank_score": 0.0061146039124856605,
+            "posts_cnt": 1983,
+            "role": "KOL",
+            "saved_at": "2024-12-06T23:30:37",
+            "updated_at": "2024-12-06T23:30:37",
+            "user_id": "@TXblockchain_",
+            "username": "Texas Blockchain Council"
+        },
+        {
+            "followers": 888,
+            "following": 1989,
+            "joined_at": "2018-03-01T00:00:00",
+            "pagerank_score": 0.006087393767103395,
+            "posts_cnt": 30400,
+            "role": "KOL",
+            "saved_at": "2024-12-06T22:45:46",
+            "updated_at": "2024-12-06T22:45:46",
+            "user_id": "@VeteranOwned1",
+            "username": "BlockChain"
+        },
+        {
+            "followers": 1015,
+            "following": 1550,
+            "joined_at": "2009-09-01T00:00:00",
+            "pagerank_score": 0.006058171628818836,
+            "posts_cnt": 2623,
+            "role": "KOL",
+            "saved_at": "2024-12-06T23:19:13",
+            "updated_at": "2024-12-06T23:19:13",
+            "user_id": "@Ajay8307",
+            "username": "Ajay Tomar - Blockchain & Web3 Solopreneur"
+        },
+        {
+            "followers": 2900000,
+            "following": 2041,
+            "joined_at": "2018-01-01T00:00:00",
+            "pagerank_score": 0.004252338551480471,
+            "posts_cnt": 12100,
+            "role": "KOL",
+            "saved_at": "2024-12-06T23:44:28",
+            "updated_at": "2024-12-06T23:44:28",
+            "user_id": "@solana",
+            "username": "Solana"
+        },
+        {
+            "followers": 1516,
+            "following": 127,
+            "joined_at": "2014-06-01T00:00:00",
+            "pagerank_score": 0.0032779683454807577,
+            "posts_cnt": 46100,
+            "role": "KOL",
+            "saved_at": "2024-12-07T17:04:49",
+            "updated_at": "2024-12-08T17:19:05",
+            "user_id": "@rayaweb3",
+            "username": "Raya"
+        },
+        {
+            "followers": 9958,
+            "following": 0,
+            "joined_at": "2016-01-01T00:00:00",
+            "pagerank_score": 0.003177674484219737,
+            "posts_cnt": 20600,
+            "role": "User",
+            "saved_at": "2024-12-07T17:05:22",
+            "updated_at": "2024-12-08T17:06:26",
+            "user_id": "@Prodiweb3",
+            "username": "Prodious16"
+        },
+        {
+            "followers": 244,
+            "following": 4,
+            "joined_at": "2015-09-01T00:00:00",
+            "pagerank_score": 0.002958303693794072,
+            "posts_cnt": 17000,
+            "role": "User",
+            "saved_at": "2024-12-07T18:09:27",
+            "updated_at": "2024-12-08T17:05:41",
+            "user_id": "@aramamiscrypto",
+            "username": "ARAMİS"
+        }
+    ],
+    "status": "success"
+}

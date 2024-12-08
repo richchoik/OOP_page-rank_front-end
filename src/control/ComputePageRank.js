@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './ComputePageRank.css';
+import '../style/ComputePageRank.css'
 
 const ComputePageRank = () => {
   const location = useLocation();
