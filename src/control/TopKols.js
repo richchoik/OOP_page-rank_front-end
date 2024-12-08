@@ -14,10 +14,11 @@ const TopKols = () => {
       try {
         const response = await fetch('http://localhost:5000/api/top-kols');
         const result = await response.json();
-        setLocalData(result.data);
-        setComputedAt(result.computed_at);
+        setLocalData(result.data || []);
+        setComputedAt(result.computed_at || '');
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLocalData([]);
       }
     };
 
