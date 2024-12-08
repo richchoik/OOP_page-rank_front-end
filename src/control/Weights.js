@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import '../style/Weights.css';
 import { useNavigate } from 'react-router-dom';
-//import data from "../localData/weights.json"
+// import data from "../localData/weights.json"
 
 const Weights = () => {
   const [weights, setWeights] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,16 +16,21 @@ const Weights = () => {
         const result = await response.json();
         if (result.status === 'success') {
           setWeights(result.weights);
+          setLoading(false);
         } else {
-          console.error('Error fetching weights:', result.message);
+          setLoading(false);
+          setError('Error fetching weights: ' + result.message);
+          setWeights([]);
         }
       } catch (error) {
-        console.error('Error fetching weights:', error);
+        setLoading(false);
+        setError('Error fetching weights: ' + error.message);
+        setWeights([]);
       }
     };
 
     fetchWeights();
-    //setWeights(data.weights)
+    // setWeights(data.weights);
   }, []);
 
   const handleHomeClick = () => {
@@ -38,28 +45,32 @@ const Weights = () => {
     <div className="App">
       <header className="App-header">
         <h1>Weights</h1>
-        {Object.keys(weights).length > 0 ? (
-          <table>
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Weight</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(weights).map(([key, value]) => (
-                <tr key={key}>
-                  <td>{key}</td>
-                  <td>{value}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {loading ? (
+          <p>Loading weights<span className="dot-1">.</span><span className="dot-2">.</span><span className="dot-3">.</span></p>
+        ) : error ? (
+          <p>{error}</p>
         ) : (
-          <p>Loading weights...</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(weights).map(([key, value]) => (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button className="btn" onClick={handleChangeWeightClick}>Change weights</button>
+          </div>
         )}
         <button className="btn" onClick={handleHomeClick}>Go to Home</button>
-        <button className="btn" onClick={handleChangeWeightClick}>Change weights</button>
       </header>
     </div>
   );
