@@ -4,37 +4,42 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
 
-  const handleCrawlButtonClick = async () => {
+  const handleCrawlButtonClick = () => {
     navigate('/crawl');
-    try {
-      const response = await fetch('http://localhost:5000/api/crawl', { method: 'POST' });
-      if (!response.ok) {
-        navigate('/error');
-      }
-    } catch (error) {
-      navigate('/error');
-      console.error('Error calling the API:', error);
-    }
+    fetch('http://localhost:5000/api/crawl', { method: 'POST' })
+      .then(response => response.json())
+      .then(result => {
+        if (result.status === 'success') {
+          navigate('/crawl', { state: { status: 'success' } });
+        } else {
+          navigate('/crawl', { state: { status: 'error' } });
+        }
+      })
+      .catch(error => {
+        console.error('Error calling the API:', error);
+        navigate('/crawl', { state: { status: 'error' } });
+      });
   };
 
   const handleTopKolsButtonClick = () => {
     navigate('/top-kols');
   };
 
-  const handleComputeButtonClick = async () => {
+  const handleComputeButtonClick = () => {
     navigate('/compute-pagerank');
-    try {
-      const response = await fetch('http://localhost:5000/api/compute-pagerank', { method: 'POST' });
-      if (!response.ok) {
+    fetch('http://localhost:5000/api/compute-pagerank', { method: 'POST' })
+      .then(response => response.json())
+      .then(result => {
+        if (result.status === 'success') {
+          navigate('/compute-pagerank', { state: result });
+        } else {
+          navigate('/error');
+        }
+      })
+      .catch(error => {
+        console.error('Error calling the API:', error);
         navigate('/error');
-      } else {
-        const result = await response.json();
-        navigate('/compute-pagerank', { state: result });
-      }
-    } catch (error) {
-      navigate('/error');
-      console.error('Error calling the API:', error);
-    }
+      });
   };
 
   return (

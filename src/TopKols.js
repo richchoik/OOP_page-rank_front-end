@@ -9,7 +9,7 @@ const TopKols = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
+    /*const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/top-kols');
         const result = await response.json();
@@ -19,8 +19,8 @@ const TopKols = () => {
       }
     };
 
-    fetchData();
-    //setLocalData(data);
+    fetchData();*/
+    setLocalData(data);
   }, []);
 
   const handleBackHome = () => {
