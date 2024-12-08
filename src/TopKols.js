@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import data from './data.json';  // Giả sử file data.json nằm cùng thư mục với App.js
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,8 +8,17 @@ const TopKols = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Sử dụng dữ liệu từ file data.json
-    setLocalData(data);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/top-kols');
+        const result = await response.json();
+        setLocalData(result.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleBackHome = () => {
