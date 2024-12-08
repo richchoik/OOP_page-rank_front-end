@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import data from "./data.json"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ const TopKols = () => {
     };
 
     fetchData();
+    //setLocalData(data);
   }, []);
 
   const handleBackHome = () => {
@@ -31,9 +33,9 @@ const TopKols = () => {
         <button className="btn" onClick={handleBackHome}>Back to Home</button>
         {localData.length > 0 ? (
           <ResponsiveContainer width="90%" height={400}>
-            <BarChart data={localData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }} barGap={10}>
+            <BarChart data={localData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }} barGap={10}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="username" angle={-20} textAnchor="end" tick={{ fontSize: 12 }} />
+              <XAxis dataKey="username" angle={-20} textAnchor="end" tick={{ fontSize: 12 }} interval={0} />
               <YAxis />
               <Tooltip />
               <Legend />
@@ -41,7 +43,7 @@ const TopKols = () => {
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <p>No data available. Click Button 2 to load data.</p>
+          <p>No data available. Click Load Data to load data.</p>
         )}
       </header>
     </div>
