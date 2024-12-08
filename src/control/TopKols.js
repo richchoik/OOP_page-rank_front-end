@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-//import datas from "../localData/data.json";
+import datas from "../localData/data.json";
 
 const TopKols = () => {
   const [localData, setLocalData] = useState([]);
